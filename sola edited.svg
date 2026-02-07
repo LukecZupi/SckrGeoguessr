@@ -369,7 +369,7 @@
          style="fill:#ee82ee" />
       <path
 		 class="classroom"
-		 class-data="levo od 265"
+		 class-data="264"
          id="path39"
          fill="red"
          fill-opacity="1"
@@ -1192,7 +1192,8 @@
     </g>
 	</g>
 	<g id="labels">
-	
+
+	  <text x="705" y="70" class="room-label">264</text>
 	  <text x="835" y="75" class="room-label">265</text>
 	  <text x="835" y="175" class="room-label">267</text>
 	  <text x="835" y="300" class="room-label">269</text>
@@ -1204,18 +1205,19 @@
 	  <text x="1205" y="565" class="room-label">280</text>
 	  <text x="1205" y="660" class="room-label">282</text>
 	  <text x="1205" y="755" class="room-label">284</text>
+		
 	  <text x="1033.5" y="590" class="room-label">Knjižnica</text>
+	  <text x="892" y="590" class="room-label">Predav.</text>
+		
 	  <text x="1055" y="865" class="room-label">Učit.</text>
 	  <text x="1055" y="900" class="room-label">Jedil.</text>
-	  <text x="700" y="70" class="room-label">264</text>
-	  <text x="892" y="590" class="room-label">Predav.</text> 
 	</g>
 	<style>
 	  .room-label {
 		font-family: Arial, sans-serif;
 		font-size: 30px;
 		font-weight: 700;
-		fill: #ff0000;
+		fill: #00ffff;
 		text-anchor: middle;
 		dominant-baseline: middle;
 		pointer-events: none;
