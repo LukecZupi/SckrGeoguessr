@@ -31,10 +31,7 @@ if __name__ == "__main__":
     classrooms = load_classrooms(SVG_FILE) #v load_classrooms(svg_file) gre SVG_FILE, poklican mal prej izven def-a
 
     if not classrooms:
-        print("No classrooms found")
+        return
     else:
         chosen = random_ucilnica(classrooms)
-        print("Random učilnica:")
-        print(f"Room: {chosen['name']}")
-        print(f"ID: {chosen['id']}")
-        print(f"d: {chosen['d']}")
+        return chosen["name"]
