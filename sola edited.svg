@@ -87,7 +87,7 @@
          style="display:inline;fill:#00ffff" />
       <path
 		 class="classroom"
-		 class-data="zgorej desno v spodnjem levem kotu"
+		 class-data="246"
          id="path5"
          fill="#ff0000"
          fill-opacity="1"
@@ -269,7 +269,7 @@
          style="fill:#ee82ee" />
       <path
 		 class="classroom"
-		 class-data="levo od 267"
+		 class-data="263"
          id="path28"
          fill="red"
          fill-opacity="1"
@@ -439,7 +439,7 @@
          style="fill:#ee82ee" />
       <path
 		 class="classroom"
-		 class-data="spodej desno na spodej levem kotu"
+		 class-data="240"
          id="path47"
          fill="red"
          fill-opacity="1"
@@ -449,7 +449,7 @@
          style="fill:#ee82ee" />
       <path
 		 class="classroom"
-		 class-data="spodej leva na spodej levem kotu"
+		 class-data="242"
          id="path48"
          fill="red"
          fill-opacity="1"
@@ -459,7 +459,7 @@
          style="fill:#ee82ee" />
       <path
 		 class="classroom"
-		 class-data="zgorej levo na spodnem levem kotu"
+		 class-data="244"
          id="path49"
          fill="red"
          fill-opacity="1"
@@ -469,7 +469,7 @@
          style="fill:#ee82ee" />
       <path
 		 class="classroom"
-		 class-data="zgorej sredina na spodnem levem kotu"
+		 class-data="245"
          id="path50"
          fill="red"
          fill-opacity="1"
@@ -485,16 +485,6 @@
          d="M 429.676, 875.229 429.964, 956.357 458.563, 956.251 458.267, 875.233 429.676, 875.229 z"
          fill_rule="evenodd"
          style="fill:#00ffff" />
-      <path
-		 class="classroom"
-		 class-data="280"
-         id="path52"
-         fill="red"
-         fill-opacity="1"
-         stroke="none"
-         d="M 1257.013, 513.438 1143.138, 513.860 1143.425, 604.599 1257.305, 604.176 1257.013, 513.438 z"
-         fill_rule="evenodd"
-         style="fill:#ee82ee" />
       <path
 		 class="unknown"
 		 class-data="zlo levo of 274"
@@ -523,16 +513,16 @@
          d="M 547.077, 874.775 547.374, 955.922 575.948, 955.816 575.651, 874.805 547.077, 874.775 z"
          fill_rule="evenodd"
          style="fill:#00ffff" />
-      <path
-		 class="classroom"
-		 class-data="282"
-         id="path56"
-         fill="red"
-         fill-opacity="1"
-         stroke="none"
-         d="M 1143.429, 607.035 1143.769, 697.735 1257.228, 697.314 1257.310, 606.612 1143.429, 607.035 z"
-         fill_rule="evenodd"
-         style="fill:#ee82ee" />
+	  <path
+	     class="classroom"
+	     class-data="282"
+	     id="path52-merged"
+	     fill="red"
+	     fill-opacity="1"
+	     stroke="none"
+	     d="M 1257.013, 513.438 1143.138, 513.860 1143.769, 697.735 1257.228, 697.314 1257.013, 513.438 z"
+	     fill_rule="evenodd"
+	     style="fill:#ee82ee" />
       <path
 		 class="classroom"
 		 class-data="spodej sredina na spodnjem levem kotu"
