@@ -238,8 +238,8 @@
          fill_rule="evenodd"
          style="fill:#00ffff" />
       <path
-		 class="knjiznica"
-		 class-data="desna stran knjiznice"
+		 class="classroom"
+		 class-data="knjiznica"
          id="path25"
          fill="#ff0000"
          fill-opacity="1"
@@ -248,25 +248,21 @@
          fill_rule="evenodd"
          style="display:inline;fill:#ee82ee" />
       <path
-		 class="kuhinja"
-		 class-data="desni del kuhinje"
          id="path26"
          fill="red"
          fill-opacity="1"
          stroke="none"
          d="M 1098.293, 946.323 1097.850, 831.651 1011.212, 831.972 1011.634, 946.645 1098.293, 946.323 z"
          fill_rule="evenodd"
-         style="fill:#ee82ee" />
+         style="fill:#00ffff" />
       <path
-		 class="kuhinja"
-		 class-data="srednji del kuhinje"
          id="path27"
          fill="red"
          fill-opacity="1"
          stroke="none"
          d="M 921.249, 946.981 1009.184, 946.654 1008.788, 831.981 920.540, 832.309 921.249, 946.981 z"
          fill_rule="evenodd"
-         style="fill:#ee82ee" />
+         style="fill:#00ffff" />
       <path
 		 class="classroom"
 		 class-data="263"
@@ -278,8 +274,8 @@
          fill_rule="evenodd"
          style="fill:#ee82ee" />
       <path
-		 class="fablab"
-		 class-data="fab lab"
+		 class="classroom"
+		 class-data="fablab"
          id="path29"
          fill="red"
          fill-opacity="1"
@@ -288,15 +284,13 @@
          fill_rule="evenodd"
          style="fill:#ee82ee" />
       <path
-		 class="kuhinja"
-		 class-data="levi del kuhinje"
          id="path30"
          fill="red"
          fill-opacity="1"
          stroke="none"
          d="M 918.154, 832.317 829.954, 832.645 830.448, 947.318 918.684, 946.990 918.154, 832.317 z"
          fill_rule="evenodd"
-         style="fill:#ee82ee" />
+         style="fill:#00ffff" />
       <path
 		 class="classroom"
 		 class-data="274"
@@ -340,15 +334,13 @@
          fill_rule="evenodd"
          style="fill:#00ffff" />
       <path
-		 class="unknown"
-		 class-data="nad fab lab"
          id="path36"
          fill="red"
          fill-opacity="1"
          stroke="none"
          d="M 788.273, 707.278 787.950, 615.615 701.127, 615.937 701.683, 707.600 788.273, 707.278 z"
          fill_rule="evenodd"
-         style="fill:#ee82ee" />
+         style="fill:#00ffff" />
       <path
          id="path37"
          fill="red"
@@ -428,8 +420,8 @@
          fill_rule="evenodd"
          style="fill:#00ffff" />
       <path
-		 class="unknown"
-		 class-data="2 nad fab lab"
+		 class="classroom"
+		 class-data="253"
          id="path46"
          fill="red"
          fill-opacity="1"
@@ -486,8 +478,8 @@
          fill_rule="evenodd"
          style="fill:#00ffff" />
       <path
-		 class="unknown"
-		 class-data="zlo levo of 274"
+		 class="classroom"
+		 class-data="259"
          id="path53"
          fill="red"
          fill-opacity="1"
@@ -525,7 +517,7 @@
 	     style="fill:#ee82ee" />
       <path
 		 class="classroom"
-		 class-data="spodej sredina na spodnjem levem kotu"
+		 class-data="241"
          id="path57"
          fill="red"
          fill-opacity="1"
@@ -534,8 +526,8 @@
          fill_rule="evenodd"
          style="fill:#ee82ee" />
       <path
-		 class="knjiznica"
-		 class-data="leva stran knjiznice"
+		 class="classroom"
+		 class-data="289"
          id="path58"
          fill="red"
          fill-opacity="1"
@@ -615,7 +607,6 @@
          d="m 1137.643,831.463 -9.999,0.048 -10,0.048 -10,0.047 -7.353,0.036 0.022,9.999 0.023,10 0.022,10 0.01,4.548 10,-0.037 10,-0.038 10,-0.037 7.404,-0.027 -0.037,-10 -0.037,-10 -0.037,-10 -0.018,-4.587"
          style="display:inline" />
       <path
-		 class-data="stene leve dele knjiznice"
          id="path84"
          fill="none"
          stroke="#000"
@@ -644,17 +635,8 @@
          stroke-opacity="1"
          stroke-width="3"
          d="m 460.587,865.642 0.037,10 0.037,10 0.036,10 0.037,10 0.036,10 0.037,10 0.037,10 0.036,10 0.039,10.6 10,-0.037 10,-0.037 10,-0.037 10,-0.037 10,-0.037 10,-0.037 10,-0.037 10,-0.037 4.106,-0.016 -0.036,-10 -0.037,-10 -0.037,-9.999 -0.036,-10 -0.037,-10 -0.036,-10 -0.037,-10 -0.037,-10 -0.038,-10.5 -10,0.025 -10,0.025 -10,0.026 -10,0.025 -10,0.025 -10,0.025 -10,0.025 -10,0.025 -4.107,0.01"
-         style="display:inline" /> <!--
-      <path
-		 id="path87"
-		 fill="none"
-		 stroke="#000"
-		 stroke-linecap="butt"
-		 stroke-linejoin="round"
-		 stroke-opacity="1"
-		 stroke-width="3"
-		 d="M 1143.429, 587.035 1143.467, 607.035 1143.504, 627.035 1143.542, 637.035 1143.579, 647.035 1143.617, 657.035 1143.654, 667.034 1143.692, 677.034 1143.729, 687.034 1143.769, 697.735 1153.769, 697.697 1163.769, 697.660 1173.769, 697.623 1183.769, 697.586 1193.769, 697.549 1203.769, 697.512 1213.769, 697.475 1223.769, 697.438 1233.769, 697.401 1243.769, 697.363 1253.768, 697.326 1257.228, 697.314 1257.237, 687.314 1257.246, 677.314 1257.255, 667.314 1257.264, 657.314 1257.273, 647.314 1257.282, 637.314 1257.291, 627.314 1257.300, 617.314 1257.310, 606.612 1257.330, 586.612" />	  
-	  !--><path
+         style="display:inline" />
+	  <path
          id="path88"
          fill="none"
          stroke="#000"
@@ -962,7 +944,6 @@
          stroke-width="3"
          d="M 1098.293, 946.323 1098.254, 936.324 1098.216, 926.324 1098.177, 916.324 1098.139, 906.324 1098.100, 896.324 1098.061, 886.324 1098.023, 876.324 1097.984, 866.324 1097.945, 856.324 1097.907, 846.324 1097.868, 836.324 1097.850, 831.651 1087.850, 831.688 1077.850, 831.725 1067.850, 831.762 1057.850, 831.799 1047.851, 831.836 1037.851, 831.873 1027.851, 831.910 1017.851, 831.947 1011.212, 831.972 1011.249, 841.972 1011.286, 851.972 1011.323, 861.972 1011.359, 871.972 1011.396, 881.972 1011.433, 891.972 1011.470, 901.972 1011.506, 911.972 1011.543, 921.972 1011.580, 931.971 1011.617, 941.971 1011.634, 946.645 1021.634, 946.608 1031.634, 946.571 1041.634, 946.534 1051.634, 946.497 1061.634, 946.460 1071.634, 946.422 1081.634, 946.385 1091.633, 946.348 1098.293, 946.323" />
       <path
-		 class-data="stene desnega dela knjiznice"
          id="path122"
          fill="none"
          stroke="#000"
@@ -1187,19 +1168,35 @@
 	  <text x="835" y="75" class="room-label">265</text>
 	  <text x="835" y="175" class="room-label">267</text>
 	  <text x="835" y="300" class="room-label">269</text>
+	  <text x="705" y="175" class="room-label">263</text>
+	  <text x="705" y="300" class="room-label">261</text>
+	  <text x="685" y="443" class="room-label">259</text>
+	  <text x="745" y="570" class="room-label">253</text>
+	  
 
 	  <text x="925" y="430" class="room-label">274</text>
-	  <text x="1060" y="415" class="room-label">276</text>
+	  <text x="1060" y="415" class="room-label">275</text>
 	  <text x="1205" y="400" class="room-label">278</text>
 
 	  <text x="1205" y="610" class="room-label">282</text>
 	  <text x="1205" y="755" class="room-label">284</text>
+	  
+	  <text x="620" y="785" class="room-label">246</text>
+	  <text x="505" y="785" class="room-label">245</text>
+	  <text x="385" y="785" class="room-label">244</text>
+	  <text x="620" y="910" class="room-label">240</text>
+	  <text x="505" y="910" class="room-label">241</text>
+	  <text x="385" y="910" class="room-label">242</text>
+	  
 		
 	  <text x="1033.5" y="590" class="room-label">Knjižnica</text>
 	  <text x="892" y="590" class="room-label">Predav.</text>
 		
 	  <text x="1055" y="865" class="room-label">Učit.</text>
 	  <text x="1055" y="900" class="room-label">Jedil.</text>
+	  
+	  <text x="745" y="740" class="room-label">Fab</text>
+	  <text x="745" y="770" class="room-label">lab</text>
 	</g>
 	<style>
 	  .room-label {
