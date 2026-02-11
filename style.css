@@ -1,6 +1,29 @@
-.room-label 
-{
-    font-family: Arial, sans-serif;
+/* Modern, visually appealing style for the Geoguessr classroom game */
+
+body {
+    background: linear-gradient(135deg, #01171b 0%, #00394f 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #e0f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#timer {
+    margin: 32px 0 16px 0;
+    padding: 10px 24px;
+    background: rgba(0, 61, 77, 0.85);
+    border-radius: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00ffff;
+    box-shadow: 0 2px 12px 0 #00394f44;
+    letter-spacing: 1px;
+}
+
+.room-label {
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 30px;
     font-weight: 700;
     fill: #00ffff;
@@ -8,24 +31,50 @@
     dominant-baseline: middle;
     pointer-events: none;
     user-select: none;
+    filter: drop-shadow(0 2px 6px #00394f);
 }
-                
+
+.classroom {
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.classroom:hover {
+    transform: scale(1.07);
+    filter: drop-shadow(0 0 12px #00ffff);
+    z-index: 2;
+}
+
+svg path {
+    fill: #00394f;
+    stroke: #eee;
+    stroke-width: 0.25;
+    transition: fill 0.4s, stroke 0.4s;
+}
+
+svg path:hover {
+    fill: #00bcd4;
+    stroke: #00ffff;
+    transition: fill 0.4s, stroke 0.4s;
+    cursor: pointer;
+}
+
+/* Optional: style for alerts (if you use custom modals in the future) */
+.alert {
+    background: #00394f;
+    color: #00ffff;
+    border-radius: 12px;
+    padding: 18px 32px;
+    box-shadow: 0 2px 16px #00394f99;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Remove default margin/padding for all elements */
 * {
-margin: 0;
-padding: 0;
-}
-body {
-background-color: #01171b;
-}
-svg path{
-fill: #00394f;
-stroke: #eee;
-stroke-width: .25;
-}
-svg path:hover{
-fill: #006284;
-transition: 0.6s;
-cursor: pointer;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 

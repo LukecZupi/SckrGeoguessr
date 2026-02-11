@@ -60,4 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
             timerDiv.textContent = `Time spent: ${secondsElapsed}s`;
         }
     }, 1000); // Update every 1000 milliseconds (1 second)
+
+    //  ========= SCORE DISPLAY SETUP
+    // This will continuously update the score display on the webpage
+    scoreDiv = document.getElementById("score"); // Make sure your HTML has <div id="score"></div>
+    setInterval(() => {
+        if (scoreDiv) {
+            scoreDiv.textContent = `Current Score: ${score.toFixed(0)}`;
+        }
+    }, 100);
 });
+
