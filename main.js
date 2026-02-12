@@ -20,9 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let guessCount = 0; // Number of guesses made
     let gameOver = false; // Whether the game has ended
     
+    // --------- NOTE: Use a non-blocking delay so the browser can repaint/update the DOM.
+    // The previous "sleep" used a busy loop which blocks the main thread and prevents DOM updates.
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     //========  CLICK LISTENER Add a click event listener to each classroom element
+    // Make the handler async so we can await delay(...) and allow UI updates to appear before alerts/reloads.
     document.querySelectorAll(".classroom").forEach(classroomElement => {
-        classroomElement.addEventListener("click", () => {
+        classroomElement.addEventListener("click", async () => {
             // If the game is over, ignore further clicks
             if (gameOver) return;
             
@@ -34,11 +41,25 @@ document.addEventListener("DOMContentLoaded", () => {
            
             // Check if the clicked classroom is the correct one
             if (correctClassroom === clickedClassroom) {
+                // Mark game over immediately to prevent further clicks while we show the result.
+                gameOver = true;
+
+                // Allow UI to update (e.g., score/attempts) before showing alert.
+                await delay(1000);
+
                 alert("Congratulations! You found the correct classroom: " + correctClassroom + "\nYour final score is: " + score.toFixed(0));
-                gameOver = true; // End the game
+
+                // Reload to restart the game (keeps behavior from original code).
+                location.reload();
 
             } else if (guessCount >= 10) { // If 10 guesses used up
-                alert("You lost, final score: 0");
+                // Update attempts DIV to show 10/10 immediately.
+                if (attemptsDiv) attemptsDiv.textContent = `Current Attempts Made: 10 / 10`;
+
+                // Allow the browser to repaint so the user sees 10/10 before the alert.
+                await delay(1000);
+
+                alert("You lost, final score: 0 ; You ran out of attempts");
                 gameOver = true;
                 location.reload(); // Reload the page to reset the game
             }
@@ -61,22 +82,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 1000); // Update every 1000 milliseconds (1 second)
 
+    // ========= NOTE: Removed blocking busy-loop sleep and replaced with delay() above.
+
     //  ========= SCORE DISPLAY SETUP
     // This will continuously update the score display on the webpage
-    scoreDiv = document.getElementById("score"); // Make sure your HTML has <div id="score"></div>
+    const scoreDiv = document.getElementById("score"); // Make sure your HTML has <div id="score"></div>
     setInterval(() => {
         if (scoreDiv) {
             scoreDiv.textContent = `Current Score: ${score.toFixed(0)} / 5000`;
         }
     }, 100);
 
-    attemptsDiv = document.getElementById("attempts");
+    const attemptsDiv = document.getElementById("attempts");
+
+    // ========= ATTEMPTS DISPLAY SETUP
+    // This will continuously update the attempts display on the webpage
     setInterval(() => {
         if (attemptsDiv) {
             attemptsDiv.textContent = `Current Attempts Made: ${guessCount.toFixed(0)} / 10`
         }
-
-
     }, 100);
 });
 
