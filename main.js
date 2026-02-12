@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    //  ========= TIMER SETUP
+   //  ========= TIMER SETUP
     // This will show how many seconds the user has spent on the website
     let secondsElapsed = 0;
     const timerDiv = document.getElementById("timer"); // Make sure your HTML has <div id="timer"></div>
@@ -66,8 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
     scoreDiv = document.getElementById("score"); // Make sure your HTML has <div id="score"></div>
     setInterval(() => {
         if (scoreDiv) {
-            scoreDiv.textContent = `Current Score: ${score.toFixed(0)}`;
+            scoreDiv.textContent = `Current Score: ${score.toFixed(0)} / 5000`;
         }
+    }, 100);
+
+    attemptsDiv = document.getElementById("attempts");
+    setInterval(() => {
+        if (attemptsDiv) {
+            attemptsDiv.textContent = `Current Attempts Made: ${guessCount.toFixed(0)} / 10`
+        }
+
+
     }, 100);
 });
 
