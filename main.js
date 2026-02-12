@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //========  CLICK LISTENER Add a click event listener to each classroom element
     // Make the handler async so we can await delay(...) and allow UI updates to appear before alerts/reloads.
     document.querySelectorAll(".classroom").forEach(classroomElement => {
+
+        //?? TUKI NE PRIDE IN SE NE POVEZE S CSS
         classroomElement.addEventListener("click", async () => {
             // If the game is over, ignore further clicks
             if (gameOver) return;
@@ -48,16 +50,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 await delay(1000);
 
                 alert("Congratulations! You found the correct classroom: " + correctClassroom + "\nYour final score is: " + score.toFixed(0));
-
                 // Reload to restart the game (keeps behavior from original code).
                 location.reload();
 
-            } else if (guessCount >= 10) { // If 10 guesses used up
+            } else if (guessCount == 10) { // If 10 guesses used up
                 // Update attempts DIV to show 10/10 immediately.
-                if (attemptsDiv) attemptsDiv.textContent = `Current Attempts Made: 10 / 10`;
+                if (attemptsDiv) attemptsDiv.textContent = `Attempts Made: 10 / 10`;
 
+                if (scoreDiv) {
+                    score = 0;
+                };
                 // Allow the browser to repaint so the user sees 10/10 before the alert.
-                await delay(1000);
+                await delay(3000);
 
                 alert("You lost, final score: 0 ; You ran out of attempts");
                 gameOver = true;
@@ -71,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+
    //  ========= TIMER SETUP
     // This will show how many seconds the user has spent on the website
     let secondsElapsed = 0;
@@ -82,8 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 1000); // Update every 1000 milliseconds (1 second)
 
-    // ========= NOTE: Removed blocking busy-loop sleep and replaced with delay() above.
 
+    // ========= NOTE: Removed blocking busy-loop sleep and replaced with delay() above.
     //  ========= SCORE DISPLAY SETUP
     // This will continuously update the score display on the webpage
     const scoreDiv = document.getElementById("score"); // Make sure your HTML has <div id="score"></div>
@@ -95,12 +100,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const attemptsDiv = document.getElementById("attempts");
 
+
     // ========= ATTEMPTS DISPLAY SETUP
     // This will continuously update the attempts display on the webpage
     setInterval(() => {
         if (attemptsDiv) {
-            attemptsDiv.textContent = `Current Attempts Made: ${guessCount.toFixed(0)} / 10`
+            attemptsDiv.textContent = `Attempts Made: ${guessCount.toFixed(0)} / 10`;
+        }
+        if (guessCount >= 10) {
+            attemptsDiv.textContent = `Attempts Made: 10 / 10`;
         }
     }, 100);
+
+
+    /*
+    -Kaj bo dodal:
+    -redirect na drugo stran / vse razen če ti zmanka poskusov / you lost če ti zmanka poskusov
+    -gumb za play again na redirectu - tukej location.reload zamenjaš z redirectom
+    */
 });
 
