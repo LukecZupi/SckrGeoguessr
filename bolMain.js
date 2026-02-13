@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
         Math.floor(Math.random() * classroomNumbers.length)
     ];
 	console.log("correct classroom: " + correctClassroom);
+	//get the path for the image to display on HTML
+	const path = `slike/${correctClassroom}`;
+	console.log(path);
+	const img = document.getElementById("classroomImage");
+	img.src = path;
 
     let guessCount = 0;
     let gameOver = false;
