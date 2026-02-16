@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 	console.log("correct classroom: " + correctClassroom);
 	//get the path for the image to display on HTML
-	const path = `../images/${correctClassroom}`;
+	const path = `../static/images/${correctClassroom}`;
 	console.log(path);
 	const img = document.getElementById("classroomImage");
 	img.src = path;
