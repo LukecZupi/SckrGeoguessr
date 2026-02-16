@@ -40,18 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (clickedClassroom === correctClassroom) {
             gameOver = true;
             updateUI();
-            await delay(500);
-            alert(`Bravo! Našli ste pravo učilnico: ${correctClassroom} :]\n Število poskusov: ${guessCount}\n Porabljen čas: ${secondsElapsed}s`);
-            location.reload();
+            await delay(200);
+            window.location.href = `/finish?guesses=${guessCount}&time=${secondsElapsed}&result=win`;
             return;
         }
 
         if (guessCount >= 10) {
             gameOver = true;
             updateUI();
-            await delay(500);
-            alert(`Izgubili ste: uporabili ste vse poskuse :[ \n število poskusov: 10 \n Porabljen čas: ${secondsElapsed}s`);
-            location.reload();
+            await delay(200);
+            window.location.href = `/finish?guesses=10&time=${secondsElapsed}&result=lose`;
             return;
         }
 

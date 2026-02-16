@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konec igre</title>
+</head>
+<body>
+
+    {% if result == "win" %}
+        <h1>Bravo! Našli ste pravo učilnico!</h1>
+    {% else %}
+        <h1>Niste našli prave učilnice :(</h1>
+    {% endif %}
+
+    <p>Število poskusov: {{ guesses }}</p>
+    <p>Porabljen čas: {{ time }}s</p>
+
+    <a href="/game">
+        <button>Ponovna igra</button>
+    </a>
+
+</body>
+</html>
