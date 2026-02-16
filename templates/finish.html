@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Konec igre</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/finish_style.css') }}">
 </head>
 <body>
 
@@ -13,6 +14,14 @@
 
     <p>Število poskusov: {{ guesses }}</p>
     <p>Porabljen čas: {{ time }}s</p>
+    <p>Pravilna učilnica: {{ correctClassroom }}</p>
+
+    <p><strong>Kliknjene učilnice: </strong></p>
+    <ul>
+        {% for classroom in guessedClassrooms %}
+            <li>{{ classroom }}</li>
+        {% endfor %}
+    </ul>
 
     <a href="/game">
         <button>Ponovna igra</button>

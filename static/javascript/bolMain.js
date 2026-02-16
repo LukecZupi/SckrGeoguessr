@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let guessCount = 0;
     let gameOver = false;
+    const guessedClassrooms = [];
 
     const attemptsDiv = document.getElementById("attempts");
     const timerDiv = document.getElementById("timer");
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateUI() {
 
         if (attemptsDiv)
-            attemptsDiv.textContent = `Število poskusov: ${Math.min(guessCount, 10)} / 10`;
+            attemptsDiv.textContent = `Število poskusov: ${Math.min(guessCount, 5)} / 5`;
     }
 
     function delay(ms) {
@@ -36,20 +37,33 @@ document.addEventListener("DOMContentLoaded", () => {
         guessCount++;
         const clickedClassroom = classroomElement.getAttribute("class-data");
 		console.log("clicked classroom: " + clickedClassroom);
+        guessedClassrooms.push(clickedClassroom);
 
         if (clickedClassroom === correctClassroom) {
             gameOver = true;
             updateUI();
             await delay(200);
-            window.location.href = `/finish?guesses=${guessCount}&time=${secondsElapsed}&result=win`;
+            const params = new URLSearchParams();
+            params.set('guesses', guessCount);
+            params.set('time', secondsElapsed);
+            params.set('result', 'win');
+            params.set('correctClassroom', correctClassroom);
+            params.set('guessedClassrooms', JSON.stringify(guessedClassrooms));
+            window.location.href = `/finish?${params.toString()}`;
             return;
         }
 
-        if (guessCount >= 10) {
+        if (guessCount >= 5) {
             gameOver = true;
             updateUI();
             await delay(200);
-            window.location.href = `/finish?guesses=10&time=${secondsElapsed}&result=lose`;
+            const params = new URLSearchParams();
+            params.set('guesses', 5);
+            params.set('time', secondsElapsed);
+            params.set('result', 'lose');
+            params.set('correctClassroom', correctClassroom);
+            params.set('guessedClassrooms', JSON.stringify(guessedClassrooms));
+            window.location.href = `/finish?${params.toString()}`;
             return;
         }
 
