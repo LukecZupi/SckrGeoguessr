@@ -23,9 +23,20 @@
         {% endfor %}
     </ul>
 
-    <a href="/game">
-        <button>Ponovna igra</button>
-    </a>
+    <div style="display:flex;gap:8px;align-items:center;margin:12px 0;">
+        <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="hard">Hard</option>
+        </select>
+        <button id="button" type="button">Znova začni igro</button>
+    </div>
+
+    <script>
+        document.getElementById("button").addEventListener('click', () => { 
+            const diff = document.getElementById("difficulty").value; 
+            window.location.href = '/game?difficulty=' + encodeURIComponent(diff); 
+        });
+    </script>
 
 </body>
 </html>

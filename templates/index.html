@@ -6,10 +6,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css') }}">
 </head>
 <body>
-    <h1>ScKr GeoGuessr</h1>
+    <marquee class="marq" 
+    bgcolor="" 
+    behavior="alternate"
+    scrollamount="10"
+    loop="">
+        <h1>ScKr GeoGuessr</h1>
+    </marquee>
+    
     <p>Najdite pravo učilnico glede na prikazano sliko!</p>
 
     <strong>Katere učilnice so vključene:</strong>
+
         <ul>
             <li>Vse učilnice ki so označene z številkami</li>
             <li>Knjižnica</li>
@@ -18,10 +26,23 @@
 
     <p>
         Zelo pomembno je čim manjše število poskusov. <br>Šteje se tudi skupni čas posamezne igre. <br>
+        <br> Spodaj pa še izberite težavnost slik! <br>
         <strong>Vso srečo :]</strong>
     </p>
-    <a href="/game">
-        <button>Začni igro</button>
-    </a>
+
+    <div style="display:flex;gap:8px;align-items:center;margin:12px 0;">
+        <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="hard">Hard</option>
+        </select>
+        <button id="button" type="button">Začni igro</button>
+    </div>
+
+    <script>
+        document.getElementById("button").addEventListener('click', () => { 
+            const diff = document.getElementById("difficulty").value; 
+            window.location.href = '/game?difficulty=' + encodeURIComponent(diff); 
+        });
+    </script>
 </body>
 </html>
