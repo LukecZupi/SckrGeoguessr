@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => { //wait so document is load
     const imagesFolder = difficulty === 'hard' ? '../static/images_hard/' : '../static/images_easy/'; //get image path based of diff
 
     const img = document.getElementById('classroomImage'); //get img element in HTML
-    if (img) img.src = imagesFolder+correctClassroom; //set img element src to the corrcet classroom path
+    //if (img) img.src = imagesFolder+correctClassroom; //set img element src to the corrcet classroom path
+    if(img) img.src="../static/images_hard/267.png"
     console.log(img.src) //debug for testing purposes
     const attemptsDiv = document.getElementById('attempts'); //get attemps div from HTML
     const timerDiv = document.getElementById('timer'); //get timer div from HTML
