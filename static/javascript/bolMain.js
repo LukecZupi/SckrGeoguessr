@@ -46,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => { //wait so document is load
 
         guessCount++; //increment guess count
         const clicked = classroomEl.getAttribute('class-data'); //get classroom number
+        console.log("clicked classroom", clicked)
         guessedClassrooms.push(clicked); //add to guessed classrooms list
+        console.log("clicked classroom list", guessedClassrooms)
         updateAttempts(); //update UI
 
         if (clicked === correctClassroom) { //if user guessed the classroom
