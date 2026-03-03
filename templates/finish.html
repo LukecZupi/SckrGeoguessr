@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Konec igre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/finish_style.css') }}">
 </head>
+
 <body>
     {% if result == "win" %}
-        <h1>Bravo! Našli ste pravo učilnico!</h1>
+    <h1>Bravo! Našli ste pravo učilnico!</h1>
     {% else %}
-        <h1>Niste našli prave učilnice :(</h1>
+    <h1>Niste našli prave učilnice :(</h1>
     {% endif %}
 
     <p>Število poskusov: {{ guesses }}</p>
@@ -21,7 +23,7 @@
 
     <ul>
         {% for classroom in guessedClassrooms %}
-            <li>{{ classroom }}</li>
+        <li>{{ classroom }}</li>
         {% endfor %}
     </ul>
 
@@ -42,4 +44,5 @@
         });
     </script>
 </body>
+
 </html>

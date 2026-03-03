@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => { //wait so SVG is loaded ju
     const img = document.getElementById("classroomImage");
     // TODO: UNCOMMENT LINE 19 AND REMOVE LINE 20 WHEN WE HAVE ALL IMAGES
     //if (img) img.src = imagesFolder+correctClassroom; //set img element src
-    if(img) img.src="../static/images_hard/267.png"
+    if (img) img.src = "../static/images_hard/267.png"
     console.log(img.src)
 
     const attemptsDiv = document.getElementById("attempts");
@@ -45,21 +45,26 @@ document.addEventListener("DOMContentLoaded", () => { //wait so SVG is loaded ju
         if (!classroom) return; //if theres no classroom there, return nothing
 
         guessCount++; //increment guess count
-        const clicked = classroomEl.getAttribute('class-data'); //get classroom number
+
+        const clicked = classroom.getAttribute('class-data'); //get classroom number
         console.log("clicked classroom", clicked)
+
         guessedClassrooms.push(clicked); //add to guessed classrooms list
         console.log("clicked classroom list", guessedClassrooms)
+
         updateAttempts(); //update UI
 
         if (clicked === correctClassroom) { //if user guessed the classroom
             gameOver = true; //game over
             clearInterval(timerId); //stop timer interval
+
             const params = new URLSearchParams(); //parameters for /finish route
             params.set("guesses", guessCount);
             params.set("time", seconds);
             params.set("result", "win");
             params.set("correctClassroom", correctClassroom);
             params.set("guessedClassrooms", JSON.stringify(guessedClassrooms));
+
             setTimeout(() => {
                 window.location.href = `/finish?${params.toString()}`;
             }, 350); //redirect with parameters and a small delay so it isn't instant
@@ -69,12 +74,14 @@ document.addEventListener("DOMContentLoaded", () => { //wait so SVG is loaded ju
         if (guessCount >= maxAttemps) { //if user ran out of guesses
             gameOver = true; //game over
             clearInterval(timerId);
+
             const params = new URLSearchParams(); //parameters for /finish route
             params.set("guesses", maxAttemps);
             params.set("time", seconds);
             params.set("result", "lose");
             params.set("correctClassroom", correctClassroom);
             params.set("guessedClassrooms", JSON.stringify(guessedClassrooms));
+
             setTimeout(() => {
                 window.location.href = `/finish?${params.toString()}`;
             }, 350); //redirect with parameters and a small delay so it isn't instant

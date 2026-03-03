@@ -11,13 +11,14 @@
     padding: 0;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     height: 100%;
     background-color: #50b2c14b;
 }
 
-.game{
+.game {
     position: relative;
     height: 100vh;
 }
@@ -29,23 +30,23 @@ html, body {
     transform: scale(0.9);
 }
 
-.map{
+.map {
     position: absolute;
     bottom: 20px;
     right: 20px;
     width: 300px;
     opacity: 0.6;
-    transition: 
+    transition:
         transform 0.3s ease,
         opacity 0.3s ease;
     backdrop-filter: blur(4px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     border-radius: 8px;
     transform-origin: bottom right;
 }
 
 .map:hover {
-    transform: scale(2.3);
+    transform: scale(2);
     opacity: 1;
 }
 
@@ -81,12 +82,12 @@ html, body {
     background: rgba(0, 61, 77, 0.85);
     box-shadow: 0 2px 12px 0 #00394f44;
     border-radius: 20px;
-    letter-spacing: 1px;   
+    letter-spacing: 1px;
     top: 20px;
     left: 20px;
     z-index: 10;
 }
 
-svg path:not(.classroom) { pointer-events: none; }
-
-
+svg path:not(.classroom) {
+    pointer-events: none;
+}
