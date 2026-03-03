@@ -44,10 +44,11 @@ document.addEventListener("DOMContentLoaded", () => { //wait so SVG is loaded ju
         const classroom = e.target.closest(".classroom"); //get the classroom of the click
         if (!classroom) return; //if theres no classroom there, return nothing
 
-        guessCount++; 
-        const clicked = classroom.getAttribute("class-data"); //get classroom number
-        console.log("clicked classroom", clicked);
+        guessCount++; //increment guess count
+        const clicked = classroomEl.getAttribute('class-data'); //get classroom number
+        console.log("clicked classroom", clicked)
         guessedClassrooms.push(clicked); //add to guessed classrooms list
+        console.log("clicked classroom list", guessedClassrooms)
         updateAttempts(); //update UI
 
         if (clicked === correctClassroom) { //if user guessed the classroom

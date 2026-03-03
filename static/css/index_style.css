@@ -28,6 +28,14 @@ select{
     border-radius: 10px;
 }
 
+#srecno{
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    margin: 0.5rem 0 1.25rem;
+    letter-spacing: 0.02em;
+    color: red
+}
+
 h1{
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: clamp(2rem, 5vw, 4rem);
