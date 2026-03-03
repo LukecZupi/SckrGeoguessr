@@ -1,4 +1,3 @@
-<!-- Start page -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css') }}">
 </head>
 <body>
-    <marquee class="marq" 
-    bgcolor="" 
+    <marquee
     behavior="alternate"
     scrollamount="10"
     loop="">
@@ -18,11 +16,11 @@
 
     <strong>Katere učilnice so vključene:</strong>
 
-        <ul>
-            <li>Vse učilnice ki so označene z številkami</li>
-            <li>Knjižnica</li>
-            <li>Fab lab</li>
-        </ul>
+    <ul>
+        <li>Vse učilnice ki so označene z številkami v prvem nastropju</li>
+        <li>Knjižnica</li>
+        <li>Fab lab</li>
+    </ul>
 
     <p>
         Zelo pomembno je čim manjše število poskusov. <br>Šteje se tudi skupni čas posamezne igre. <br>
@@ -30,7 +28,7 @@
         <strong>Vso srečo :]</strong>
     </p>
 
-    <div style="display:flex;gap:8px;align-items:center;margin:12px 0;">
+    <div>
         <select id="difficulty">
             <option value="easy">Lahko</option>
             <option value="hard">Težko</option>
@@ -39,9 +37,9 @@
     </div>
 
     <script>
-        document.getElementById("button").addEventListener('click', () => { 
-            const diff = document.getElementById("difficulty").value; 
-            window.location.href = '/game?difficulty=' + encodeURIComponent(diff); 
+        document.getElementById("button").addEventListener("click", () => {  //click listener for button
+            const diff = document.getElementById("difficulty").value; //get difficulty
+            window.location.href = "/game?difficulty=" + encodeURIComponent(diff); //redirect with difficulty
         });
     </script>
 </body>

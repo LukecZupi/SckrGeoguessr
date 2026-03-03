@@ -14,7 +14,7 @@ button{
 }
 
 select{
-    background-color: #63da51;
+    background-color: #227215;
     border: none;
     color: rgb(245, 245, 245);
     padding: 15px 32px;
@@ -29,7 +29,7 @@ select{
 }
 
 h1{
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: clamp(2rem, 5vw, 4rem);
     margin: 0.5rem 0 1.25rem;
     letter-spacing: 0.02em;

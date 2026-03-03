@@ -1,79 +1,82 @@
-document.addEventListener('DOMContentLoaded', () => { //wait so document is loaded
-    const classrooms = Array.from(document.querySelectorAll('.classroom')); //load classrooms into var
-    const classroomNumbers = classrooms.map(el => el.getAttribute('class-data')).filter(Boolean); //load classroom numbers and remove invalid IDS's
-    console.log(classrooms, classroomNumbers); //log for debug purposes
+document.addEventListener("DOMContentLoaded", () => { //wait so SVG is loaded just in case
+    const classrooms = Array.from(document.querySelectorAll(".classroom")); //load classrooms into variable
+    const classroomNumbers = classrooms.map(el => el.getAttribute("class-data")).filter(Boolean); //load classroom numbers and remove invalid IDS's
+    console.log("classrooms: ", classrooms, "numbers: ", classroomNumbers);
 
-    const correctClassroom = classroomNumbers[Math.floor(Math.random() * classroomNumbers.length)]; //get a random classroom and store into var
+    //random classroom
+    const correctClassroom = classroomNumbers[Math.floor(Math.random() * classroomNumbers.length)]; //get a random classroom number and store into variable
     console.log("correct classroom", correctClassroom);
-    console.log(typeof correctClassroom); //log for debug and testing -- DELETE IN PRODUCTION
 
     //get difficulty
-    const params = new URLSearchParams(window.location.search);
-    const difficulty = params.get('difficulty');
+    const params = new URLSearchParams(window.location.search); //search for difficulty in URL parameters
+    const difficulty = params.get("difficulty"); //get difficulty from URL parameters
 
     //set images path according to the difficulty
-    const imagesFolder = difficulty === 'hard' ? '../static/images_hard/' : '../static/images_easy/'; //get image path based of diff
+    const imagesFolder = difficulty === "hard" ? "../static/images_hard/" : "../static/images_easy/";
 
-    const img = document.getElementById('classroomImage'); //get img element in HTML
-    //if (img) img.src = imagesFolder+correctClassroom; //set img element src to the corrcet classroom path
+    const img = document.getElementById("classroomImage");
+    // TODO: UNCOMMENT LINE 19 AND REMOVE LINE 20 WHEN WE HAVE ALL IMAGES
+    //if (img) img.src = imagesFolder+correctClassroom; //set img element src
     if(img) img.src="../static/images_hard/267.png"
-    console.log(img.src) //debug for testing purposes
-    const attemptsDiv = document.getElementById('attempts'); //get attemps div from HTML
-    const timerDiv = document.getElementById('timer'); //get timer div from HTML
+    console.log(img.src)
 
-    //self explanatory
-    const MAX_ATTEMPTS = 5;
+    const attemptsDiv = document.getElementById("attempts");
+    const timerDiv = document.getElementById("timer");
+
+    const maxAttemps = 5;
     let guessCount = 0;
     let gameOver = false;
-    let secondsElapsed = 0;
+    let seconds = 0;
     const guessedClassrooms = [];
 
-    const updateAttempts = () => { //just updates attempts HTML element
-        if (attemptsDiv) attemptsDiv.textContent = `Število poskusov: ${Math.min(guessCount, MAX_ATTEMPTS)} / ${MAX_ATTEMPTS}`;
-    };
+    const updateAttempts = () => {
+        attemptsDiv.textContent = `Število poskusov: ${Math.min(guessCount, maxAttemps)} / ${maxAttemps}`;
+    }; //update attemps in HTML
 
-    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms)); //???? idk
 
-    const timerId = setInterval(() => { //updates the timer HTML element
-        secondsElapsed++;
-        if (timerDiv) timerDiv.textContent = `Porabljen čas: ${secondsElapsed}s`;
-    }, 1000);
+    const timerId = setInterval(() => {
+        seconds++;
+        timerDiv.textContent = `Porabljen čas: ${seconds}s`;
+    }, 1000); //update seconds in HTML
 
-    document.addEventListener('click', async (e) => { //add a GLOBAL event listener
-        if (gameOver) return; //if game is over, return from func
-        const classroomEl = e.target.closest('.classroom'); // gets the closest classroom to the click
-        if (!classroomEl) return;
+    document.addEventListener("click", async (e) => { //GLOBAL event listener for optimization
+        if (gameOver) return; //return if game is over
+        const classroom = e.target.closest(".classroom"); //get the classroom of the click
+        if (!classroom) return; //if theres no classroom there, return nothing
 
-        guessCount++; //increment guess count
-        const clicked = classroomEl.getAttribute('class-data'); //get classroom number
+        guessCount++; 
+        const clicked = classroom.getAttribute("class-data"); //get classroom number
+        console.log("clicked classroom", clicked);
         guessedClassrooms.push(clicked); //add to guessed classrooms list
         updateAttempts(); //update UI
 
         if (clicked === correctClassroom) { //if user guessed the classroom
             gameOver = true; //game over
-            await sleep(200); //wait so redirect isn't instant
-            clearInterval(timerId);
-            const params = new URLSearchParams(); //new var for parameters
-            params.set('guesses', guessCount);
-            params.set('time', secondsElapsed);
-            params.set('result', 'win');
-            params.set('correctClassroom', correctClassroom);
-            params.set('guessedClassrooms', JSON.stringify(guessedClassrooms));
-            window.location.href = `/finish?${params.toString()}`; //redirect with parameters
+            clearInterval(timerId); //stop timer interval
+            const params = new URLSearchParams(); //parameters for /finish route
+            params.set("guesses", guessCount);
+            params.set("time", seconds);
+            params.set("result", "win");
+            params.set("correctClassroom", correctClassroom);
+            params.set("guessedClassrooms", JSON.stringify(guessedClassrooms));
+            setTimeout(() => {
+                window.location.href = `/finish?${params.toString()}`;
+            }, 350); //redirect with parameters and a small delay so it isn't instant
             return;
         }
 
-        if (guessCount >= MAX_ATTEMPTS) { //if user ran out of guesses
+        if (guessCount >= maxAttemps) { //if user ran out of guesses
             gameOver = true; //game over
-            await sleep(200); //wait so redirect isn't instant
             clearInterval(timerId);
-            const params = new URLSearchParams(); //new var for parameters
-            params.set('guesses', MAX_ATTEMPTS);
-            params.set('time', secondsElapsed);
-            params.set('result', 'lose');
-            params.set('correctClassroom', correctClassroom);
-            params.set('guessedClassrooms', JSON.stringify(guessedClassrooms));
-            window.location.href = `/finish?${params.toString()}`; //redirect with parameters
+            const params = new URLSearchParams(); //parameters for /finish route
+            params.set("guesses", maxAttemps);
+            params.set("time", seconds);
+            params.set("result", "lose");
+            params.set("correctClassroom", correctClassroom);
+            params.set("guessedClassrooms", JSON.stringify(guessedClassrooms));
+            setTimeout(() => {
+                window.location.href = `/finish?${params.toString()}`;
+            }, 350); //redirect with parameters and a small delay so it isn't instant
             return;
         }
     });
