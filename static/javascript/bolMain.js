@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => { //wait so SVG is loaded ju
 
             setTimeout(() => {
                 window.location.href = `/finish?${params.toString()}`;
-            }, 350); //redirect with parameters and a small delay so it isn't instant
+            }, 250); //redirect with parameters and a small delay so it isn't instant
             return;
         }
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => { //wait so SVG is loaded ju
 
             setTimeout(() => {
                 window.location.href = `/finish?${params.toString()}`;
-            }, 350); //redirect with parameters and a small delay so it isn't instant
+            }, 250); //redirect with parameters and a small delay so it isn't instant
             return;
         }
     });
