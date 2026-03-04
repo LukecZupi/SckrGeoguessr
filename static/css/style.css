@@ -56,7 +56,8 @@ body {
 }
 
 svg path:hover{
-    fill: rgba(62, 255, 37, 0.699);
+    transition: 0.3s;
+    fill: rgba(33, 228, 8, 0.699);
 }
 
 #timer {
