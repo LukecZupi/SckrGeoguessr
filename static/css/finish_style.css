@@ -1,32 +1,42 @@
-p, li, strong{
+p,
+li,
+strong {
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
     margin: 0.5rem 0 0rem;
 }
 
-h1{
+h1 {
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: clamp(2rem, 5vw, 4rem);
     margin: 0.5rem 0 1.25rem;
     letter-spacing: 0.02em;
-    background: linear-gradient(90deg,#dd087a 0%, #9c0fe9 33%, #0051ff 67%);
+    background: linear-gradient(90deg, #dd087a 0%, #9c0fe9 33%, #0051ff 67%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
     transition: transform 220ms ease;
     animation: gradientShift 6s linear infinite;
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,27 +44,27 @@ body{
     min-height: 100vh;
     margin: 0;
     text-align: center;
-    background-color: #e19e9e6c;
+    background-color: #8cd6e76c;
 }
 
-.container{
+.container {
     background: linear-gradient(90deg, #f4c40328 0%, #663a0133 100%);
-    padding: 40px;
+    padding: 20px 10px 20px 10px;
     border-radius: 10px;
-    box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     width: 75%;
 }
 
-.podatki{
-    background: linear-gradient(90deg, #cfa66967 0%, #ce741f52 100%);
+.podatki {
+    background: linear-gradient(90deg, #d29f524e 0%, #ce741f3f 100%);
     padding: 25px;
     border-radius: 8px;
     margin-bottom: 25px;
     text-align: center;
 }
 
-#reset{
+#reset {
     background-color: #0c35c8;
     border: none;
     color: rgb(245, 245, 245);
@@ -68,14 +78,14 @@ body{
     cursor: pointer;
     border-radius: 10px;
     transition: background-color 0.5s;
-    box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-#reset:hover{
-    background-color:#1f8491;
+#reset:hover {
+    background-color: #1f8491;
 }
 
-.difficulty{
+.difficulty {
     background-color: #227215;
     border: none;
     color: rgb(245, 245, 245);
@@ -89,9 +99,9 @@ body{
     cursor: pointer;
     border-radius: 10px;
     transition: background-color 0.5s;
-    box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-.difficulty:hover{
-    background-color:#1f912e;
+.difficulty:hover {
+    background-color: #1f912e;
 }

@@ -55,15 +55,19 @@ body {
     height: auto;
 }
 
-svg path:hover{
-    transition: 0.3s;
-    fill: rgba(33, 228, 8, 0.699);
+svg path.classroom {
+    fill: #07c814;
+    transition: fill 0.5s ease;
+}
+
+svg path.classroom:hover {
+    fill: rgb(0, 255, 0);
 }
 
 #timer {
     font-weight: bold;
     font-size: 1.5em;
-    color: #00ffff;
+    color: #67E8F9;
     position: absolute;
     margin: 32px 0 16px 0;
     padding: 10px 24px;
@@ -80,7 +84,7 @@ svg path:hover{
 #attempts {
     font-weight: bold;
     font-size: 1.5em;
-    color: #00ffff;
+    color: #67E8F9;
     position: absolute;
     margin: 32px 0 16px 0;
     padding: 10px 24px;

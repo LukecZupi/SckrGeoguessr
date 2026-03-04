@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Konec igre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/finish_style.css') }}">
 </head>
-
 <body>
     <div class="container">
         {% if result == "win" %}
@@ -22,45 +20,44 @@
 
             <p><strong>Kliknjene učilnice: </strong></p>
 
-            
-                {% for classroom in guessedClassrooms %}
-                <p>{{ classroom }}</p>
-                {% endfor %}
-            
+            {% for classroom in guessedClassrooms %}
+            <p>{{ classroom }}</p>
+            {% endfor %}
+
         </div>
-         <div id="difficulty-section">
-                <p><strong>Izberite še težavnost slik!</strong></p>
-                <button id="easyBtn" class="difficulty">Easy</button>
-                <button id="hardBtn" class="difficulty">Hard</button>
-                <div id="confirm-container" style="display:none; margin-top:10px;">
-                    <button id="reset">Potrdi in začni igro</button>
-                </div>
+        <div id="difficulty-section">
+            <p><strong>Izberite še težavnost slik!</strong></p>
+            <button id="easy" class="difficulty">Lahko</button>
+            <button id="hard" class="difficulty">Težko</button>
+            <div id="confirm" style="display:none; margin-top:10px;">
+                <button id="reset">Potrdi in začni igro</button>
             </div>
+        </div>
     </div>
     <script>
-        (function() {
+        (function () {
             var selected = null;
-            var easyBtn = document.getElementById('easyBtn');
-            var hardBtn = document.getElementById('hardBtn');
-            var confirmContainer = document.getElementById('confirm-container');
-            var confirmBtn = document.getElementById('reset');
+            var easy = document.getElementById("easy");
+            var hard = document.getElementById("hard");
+            var confirmContainer = document.getElementById("confirm");
+            var confirmBtn = document.getElementById("reset");
 
             function selectDifficulty(name, btn) {
                 selected = name;
-                easyBtn.classList.remove('selected');
-                hardBtn.classList.remove('selected');
-                btn.classList.add('selected');
-                confirmContainer.style.display = 'block';
+                easy.classList.remove("selected");
+                hard.classList.remove("selected");
+                btn.classList.add("selected");
+                confirmContainer.style.display = "block";
             }
 
-            easyBtn.addEventListener('click', function() { selectDifficulty('easy', easyBtn), confirmBtn.innerHTML = "Potrdi in začni igro (Lahko)"; });
-            hardBtn.addEventListener('click', function() { selectDifficulty('hard', hardBtn), confirmBtn.innerHTML = "Potrdi in začni igro (Težko)"; });
+            easy.addEventListener("click", function () { selectDifficulty("easy", easy), confirmBtn.innerHTML = "Potrdi in začni igro (Lahko)"; });
+            hard.addEventListener("click", function () { selectDifficulty("hard", hard), confirmBtn.innerHTML = "Potrdi in začni igro (Težko)"; });
 
-            confirmBtn.addEventListener('click', function() {
+            confirmBtn.addEventListener("click", function () {
                 if (!selected) return;
-                window.location.href = '/game?difficulty=' + encodeURIComponent(selected);
+                window.location.href = "/game?difficulty=" + encodeURIComponent(selected);
             });
         })();
-    </script>  
+    </script>
 </body>
 </html>
