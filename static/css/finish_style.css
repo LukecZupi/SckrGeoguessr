@@ -41,20 +41,20 @@ body{
     background: linear-gradient(90deg, #f4c40328 0%, #663a0133 100%);
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
     max-width: 600px;
     width: 75%;
 }
 
 .podatki{
-    background: linear-gradient(90deg, #cfa66998 0%, #ce741f83 100%);
+    background: linear-gradient(90deg, #cfa66967 0%, #ce741f52 100%);
     padding: 25px;
     border-radius: 8px;
     margin-bottom: 25px;
     text-align: center;
 }
 
-button{
+#reset{
     background-color: #0c35c8;
     border: none;
     color: rgb(245, 245, 245);
@@ -68,17 +68,14 @@ button{
     cursor: pointer;
     border-radius: 10px;
     transition: background-color 0.5s;
+    box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
 }
 
-.reset{
-    background-color: #3556cc;
-    color: rgb(245, 245, 245);
-}
-.reset:hover{
+#reset:hover{
     background-color:#1f8491;
 }
 
-select{
+.difficulty{
     background-color: #227215;
     border: none;
     color: rgb(245, 245, 245);
@@ -92,8 +89,9 @@ select{
     cursor: pointer;
     border-radius: 10px;
     transition: background-color 0.5s;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
 }
-select:hover{
+
+.difficulty:hover{
     background-color:#1f912e;
 }

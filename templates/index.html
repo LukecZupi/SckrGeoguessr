@@ -8,7 +8,7 @@
 
 <body>
     <div class="container">
-        <marquee behavior="alternate" scrollamount="6.7" loop="">
+        <marquee behavior="alternate" scrollamount="3" loop="">
             <h1>ScKr GeoGuessr</h1>
         </marquee>
         <div class="podatki">
@@ -23,25 +23,43 @@
             </p>
             <p>
                 Zelo pomembno je čim manjše število poskusov. <br>Šteje se tudi skupni čas posamezne igre. <br>
-                <br><strong>Izberite še težavnost slik!</strong><br>
                 <strong id="srecno">Vso srečo :]</strong>
             </p>
-
-            <div>
-                <select id="difficulty">
-                    <option value="easy">Lahko</option>
-                    <option value="hard">Težko</option>
-                </select>
-                <button id="button" type="button" class="reset">Začni igro!</button>
+            <div id="difficulty-section">
+                <p><strong>Izberite še težavnost slik!</strong></p>
+                <button id="easyBtn" class="difficulty">Easy</button>
+                <button id="hardBtn" class="difficulty">Hard</button>
+                <div id="confirm-container" style="display:none; margin-top:10px;">
+                    <button id="reset">Potrdi in začni igro</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        document.getElementById("button").addEventListener("click", () => {  //click listener for button
-            const diff = document.getElementById("difficulty").value; //get difficulty
-            window.location.href = "/game?difficulty=" + encodeURIComponent(diff); //redirect with difficulty
-        });
+        (function() {
+            var selected = null;
+            var easyBtn = document.getElementById('easyBtn');
+            var hardBtn = document.getElementById('hardBtn');
+            var confirmContainer = document.getElementById('confirm-container');
+            var confirmBtn = document.getElementById('reset');
+
+            function selectDifficulty(name, btn) {
+                selected = name;
+                easyBtn.classList.remove('selected');
+                hardBtn.classList.remove('selected');
+                btn.classList.add('selected');
+                confirmContainer.style.display = 'block';
+            }
+
+            easyBtn.addEventListener('click', function() { selectDifficulty('easy', easyBtn), confirmBtn.innerHTML = "Potrdi in začni igro (Lahko)"; });
+            hardBtn.addEventListener('click', function() { selectDifficulty('hard', hardBtn), confirmBtn.innerHTML = "Potrdi in začni igro (Težko)"; });
+
+            confirmBtn.addEventListener('click', function() {
+                if (!selected) return;
+                window.location.href = '/game?difficulty=' + encodeURIComponent(selected);
+            });
+        })();
     </script>
 </body>
 

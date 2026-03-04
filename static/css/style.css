@@ -55,6 +55,10 @@ body {
     height: auto;
 }
 
+svg path:hover{
+    fill: rgba(62, 255, 37, 0.699);
+}
+
 #timer {
     font-weight: bold;
     font-size: 1.5em;
