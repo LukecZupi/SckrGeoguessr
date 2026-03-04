@@ -9,40 +9,42 @@
 </head>
 
 <body>
-    {% if result == "win" %}
-    <h1>Bravo! Našli ste pravo učilnico!</h1>
-    {% else %}
-    <h1>Niste našli prave učilnice :(</h1>
-    {% endif %}
+    <div class="container">
+        {% if result == "win" %}
+        <h1>Bravo! Našli ste pravo učilnico!</h1>
+        {% else %}
+        <h1>Niste našli prave učilnice :(</h1>
+        {% endif %}
+        <div class="podatki">
+            <p>Število poskusov: {{ guesses }}</p>
+            <p>Porabljen čas: {{ time }}s</p>
+            <p>Pravilna učilnica: {{ correctClassroom }}</p>
 
-    <p>Število poskusov: {{ guesses }}</p>
-    <p>Porabljen čas: {{ time }}s</p>
-    <p>Pravilna učilnica: {{ correctClassroom }}</p>
+            <p><strong>Kliknjene učilnice: </strong></p>
 
-    <p><strong>Kliknjene učilnice: </strong></p>
+            
+                {% for classroom in guessedClassrooms %}
+                <p>{{ classroom }}</p>
+                {% endfor %}
+            
+        </div>
+        <strong><br>Izberite še težavnost slik! <br></strong>
 
-    <ul>
-        {% for classroom in guessedClassrooms %}
-        <li>{{ classroom }}</li>
-        {% endfor %}
-    </ul>
-
-    <strong><br>Izberite še težavnost slik! <br></strong>
-
-    <div>
-        <select id="difficulty">
-            <option value="easy">Lahko</option>
-            <option value="hard">Težko</option>
-        </select>
-        <button id="button" type="button">Znova začni igro!</button>
+        <div>
+            <select id="difficulty">
+                <option value="easy" id="easy">Lahko</option>
+                <option value="hard">Težko</option>
+            </select>
+            <button id="button" type="button" class="reset">Znova začni igro!</button>
+        </div>
     </div>
-
     <script>
         document.getElementById("button").addEventListener("click", () => {  //click listener for button
             const diff = document.getElementById("difficulty").value; //get difficulty
             window.location.href = "/game?difficulty=" + encodeURIComponent(diff); //redirect with difficulty
         });
     </script>
+    
 </body>
 
 </html>

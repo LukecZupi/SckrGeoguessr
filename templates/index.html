@@ -7,32 +7,34 @@
 </head>
 
 <body>
-    <marquee behavior="alternate" scrollamount="10" loop="">
-        <h1>ScKr GeoGuessr</h1>
-    </marquee>
+    <div class="container">
+        <marquee behavior="alternate" scrollamount="6.7" loop="">
+            <h1>ScKr GeoGuessr</h1>
+        </marquee>
+        <div class="podatki">
+            <p>Najdite pravo učilnico glede na prikazano sliko!</p>
 
-    <p>Najdite pravo učilnico glede na prikazano sliko!</p>
+            <strong>Katere učilnice so vključene:</strong>
 
-    <strong>Katere učilnice so vključene:</strong>
+            <p>
+                učilnice označene z številkami (pritličje)<br>
+                Knjižnica<br>
+                Fab lab<br>
+            </p>
+            <p>
+                Zelo pomembno je čim manjše število poskusov. <br>Šteje se tudi skupni čas posamezne igre. <br>
+                <br><strong>Izberite še težavnost slik!</strong><br>
+                <strong id="srecno">Vso srečo :]</strong>
+            </p>
 
-    <ul>
-        <li>Vse učilnice ki so označene z številkami v prvem nastropju</li>
-        <li>Knjižnica</li>
-        <li>Fab lab</li>
-    </ul>
-
-    <p>
-        Zelo pomembno je čim manjše število poskusov. <br>Šteje se tudi skupni čas posamezne igre. <br>
-        <br><strong>Izberite še težavnost slik!</strong><br>
-        <strong id="srecno">Vso srečo :]</strong>
-    </p>
-
-    <div>
-        <select id="difficulty">
-            <option value="easy">Lahko</option>
-            <option value="hard">Težko</option>
-        </select>
-        <button id="button" type="button">Začni igro!</button>
+            <div>
+                <select id="difficulty">
+                    <option value="easy">Lahko</option>
+                    <option value="hard">Težko</option>
+                </select>
+                <button id="button" type="button" class="reset">Začni igro!</button>
+            </div>
+        </div>
     </div>
 
     <script>
