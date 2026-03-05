@@ -37,21 +37,21 @@
             var selected = null;
             var easy = document.getElementById("easy");
             var hard = document.getElementById("hard");
-            var confirmContainer = document.getElementById("confirm");
-            var confirmBtn = document.getElementById("reset");
+            var confirmDiv = document.getElementById("confirm");
+            var resetButton = document.getElementById("reset");
 
             function selectDifficulty(name, btn) {
                 selected = name;
                 easy.classList.remove("selected");
                 hard.classList.remove("selected");
                 btn.classList.add("selected");
-                confirmContainer.style.display = "block";
+                confirmDiv.style.display = "block";
             }
 
-            easy.addEventListener("click", function () { selectDifficulty("easy", easy), confirmBtn.innerHTML = "Potrdi in začni igro (Lahko)"; });
-            hard.addEventListener("click", function () { selectDifficulty("hard", hard), confirmBtn.innerHTML = "Potrdi in začni igro (Težko)"; });
+            easy.addEventListener("click", function () { selectDifficulty("easy", easy), resetButton.innerHTML = "Potrdi in začni igro (Lahko)"; });
+            hard.addEventListener("click", function () { selectDifficulty("hard", hard), resetButton.innerHTML = "Potrdi in začni igro (Težko)"; });
 
-            confirmBtn.addEventListener("click", function () {
+            resetButton.addEventListener("click", function () {
                 if (!selected) return;
                 window.location.href = "/game?difficulty=" + encodeURIComponent(selected);
             });
