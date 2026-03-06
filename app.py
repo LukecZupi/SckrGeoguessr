@@ -1,15 +1,19 @@
 from flask import Flask, render_template, request
+from qrcodegen import createQR
 import json
+
+createQR()
 
 app = Flask(__name__)
 
-@app.route("/")
-def start():
-    return render_template("index.html")
-
-@app.route("/game")
-def game():
+#split /game route into 2: display and control
+@app.route("/display")
+def display():
     return render_template("game.html")
+
+@app.route("/control")
+def control():
+    return render_template("control.html")
 
 @app.route("/finish")
 def finish():
@@ -30,4 +34,4 @@ def finish():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)

@@ -4,15 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Sckr Geoguessr</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-	<script src="../static/javascript/bolMain.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/control.css') }}">
+	<script type="module" src="../static/javascript/control.js"></script>
 </head>
 <body>
 	<div class="game">
-		<div id="timer">Porabljen čas: 0s</div>
-		<img id="classroomImage" class="background"/>
-		<img id="qrcode" src="../static/qr.png"/>
-		<div id="attempts">Število poskusov: /10</div>
 		<div class="map">
 			<svg width="942" height="1066" viewBox="0 0 942 1066" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path id="path4"

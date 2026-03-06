@@ -69,7 +69,7 @@ svg path:not(.classroom) {
 }
 
 #timer {
-    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: bold;
     font-size: 1.5em;
     color: #67E8F9;
     position: absolute;
@@ -86,7 +86,7 @@ svg path:not(.classroom) {
 
 
 #attempts {
-    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: bold;
     font-size: 1.5em;
     color: #67E8F9;
     position: absolute;
