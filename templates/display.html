@@ -1,0 +1,23 @@
+<!-- ONLY DISPLAYS CLASSROOM IMAGE AND QR CODE!!!! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sckr Geoguessr</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/display.css') }}">
+	<script type="module" src="../static/javascript/bolMain.js"></script>
+</head>
+<body>
+	<h1>Sckr geoguessr!</h1>
+	<div class="row">
+		<div class="column">
+			<img id="qrcode" src="../static/qr.png" class="qrcodeimage" style="width:100%"/>
+		</div>
+		<div class="column">
+			
+			<img id="classroomImage" class="background" style="width:100%"/>
+		</div>
+	</div>
+</body>
+</html>

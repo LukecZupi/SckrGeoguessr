@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("classrooms:", classrooms, "numbers:", classroomNumbers);
 
-    correctClassroom =
-        classroomNumbers[Math.floor(Math.random() * classroomNumbers.length)];
+    correctClassroom = classroomNumbers[Math.floor(Math.random() * classroomNumbers.length)];
 
     console.log("correct classroom", correctClassroom);
 
@@ -21,4 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //if (img) img.src = "../static/images" + correctClassroom + ".png";
     if (img) img.src = "../static/images/267.png";
+    console.log(img.src)
 });

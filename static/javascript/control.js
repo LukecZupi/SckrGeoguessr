@@ -1,5 +1,6 @@
 import { getCorrectClassroom } from "./bolMain.js";
 
+// uses control.html. (SVG click logic and finish redirect)
 document.addEventListener("DOMContentLoaded", () => {
     const maxAttemps = 5;
     let guessCount = 0;

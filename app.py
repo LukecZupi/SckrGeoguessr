@@ -1,15 +1,25 @@
 from flask import Flask, render_template, request
 from qrcodegen import createQR
 import json
+import os
+
+if os.path.exists("static/qr.png"):
+  os.remove("static/qr.png")
+else:
+  pass
 
 createQR()
 
 app = Flask(__name__)
 
 #split /game route into 2: display and control
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 @app.route("/display")
 def display():
-    return render_template("game.html")
+    return render_template("display.html")
 
 @app.route("/control")
 def control():
