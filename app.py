@@ -3,8 +3,8 @@ from qrcodegen import createQR
 import json
 import os
 
-if os.path.exists("static/qr.png"):
-  os.remove("static/qr.png")
+if os.path.exists("static/images/qr.png"):
+  os.remove("static/images/qr.png")
 else:
   pass
 

@@ -20,5 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //if (img) img.src = "../static/images" + correctClassroom + ".png";
     if (img) img.src = "../static/images/267.png";
-    console.log(img.src)
 });

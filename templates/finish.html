@@ -24,39 +24,5 @@
             <p>{{ classroom }}</p>
             {% endfor %}
         </div>
-        <div>
-            <p><strong>Izberite še težavnost slik!</strong></p>
-            <button id="easy" class="difficulty">Lahko</button>
-            <button id="hard" class="difficulty">Težko</button>
-            <div id="confirm" style="display:none; margin-top:10px;">
-                <button id="reset">Potrdi in začni igro</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        (function () {
-            var selected = null;
-            var easy = document.getElementById("easy");
-            var hard = document.getElementById("hard");
-            var confirmDiv = document.getElementById("confirm");
-            var resetButton = document.getElementById("reset");
-
-            function selectDifficulty(name, btn) {
-                selected = name;
-                easy.classList.remove("selected");
-                hard.classList.remove("selected");
-                btn.classList.add("selected");
-                confirmDiv.style.display = "block";
-            }
-
-            easy.addEventListener("click", function () { selectDifficulty("easy", easy), resetButton.innerHTML = "Potrdi in začni igro (Lahko)"; });
-            hard.addEventListener("click", function () { selectDifficulty("hard", hard), resetButton.innerHTML = "Potrdi in začni igro (Težko)"; });
-
-            resetButton.addEventListener("click", function () {
-                if (!selected) return;
-                window.location.href = "/game?difficulty=" + encodeURIComponent(selected);
-            });
-        })();
-    </script>
 </body>
 </html>

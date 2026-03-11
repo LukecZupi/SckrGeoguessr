@@ -26,10 +26,12 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     border-radius: 8px;
     width: 45%;
+    min-width: 45%;
+    min-height: 45%;
 }
 
 .map svg {
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
