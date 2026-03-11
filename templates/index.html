@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <title>index</title>
 </head>
 <body>
-    <h1>Display and control pages: </h1>
-    <a href="/control">Control page</a><br>
-    <a href="/display">Display page</a>
+    <div id="container">
+        <h1>Display and control pages: </h1>
+        <div id="hrefss">
+            <a href="/display" id="hrefs">Display page</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/control" id="hrefs">Control page</a> 
+        </div>
+    </div>
 </body>
 </html>
