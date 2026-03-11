@@ -5,28 +5,25 @@ body {
   background-color: #efe7d5;
 }
 
-.column {
-  float: left;
-  width: 45%;
-  padding: 0;
+.row {
+  display: flex;
+  height: 100vh;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+.column {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #qrcode{
-  padding-top: 80px;
-  height: 85%;
+  height: 75%;
   width: 85%;
-  margin-right: 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #classroomImage{
-  padding-top: 80px;
-  height: 120%;
-  width: 120%;
-  margin-left: 0px;
+  height: 82.67%;
+  width: 95%;
 }

@@ -15,14 +15,17 @@
         {% endif %}
         <div class="podatki">
             <p>Število poskusov: {{ guesses }}</p>
-            <p>Porabljen čas: {{ time }}s</p>
             <p>Pravilna učilnica: {{ correctClassroom }}</p>
-
             <p><strong>Kliknjene učilnice: </strong></p>
 
             {% for classroom in guessedClassrooms %}
             <p>{{ classroom }}</p>
             {% endfor %}
+            <div>
+                <div id="confirm" style="margin-top:10px;">
+                    <a href="/control"><button id="reset">Poskusi šeenkrat</button></a>
+                </div>
+            </div>
         </div>
 </body>
 </html>

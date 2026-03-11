@@ -12,6 +12,7 @@ def createQR():
     box_size=10,
     border=1,
     )
+
     qr.add_data('http://{IPAddr}/control')
     qr.make(fit=True)
 
