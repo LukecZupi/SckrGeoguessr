@@ -14,13 +14,14 @@
         <h1>Niste našli prave učilnice :(</h1>
         {% endif %}
         <div class="podatki">
-            <p>Število poskusov: {{ guesses }}</p>
-            <p>Pravilna učilnica: {{ correctClassroom }}</p>
+            <p><strong>Število poskusov: {{ guesses }}</strong></p>
+            <p><strong>Pravilna učilnica: {{ correctClassroom }}</strong></p><br>
             <p><strong>Kliknjene učilnice: </strong></p>
 
             {% for classroom in guessedClassrooms %}
             <p>{{ classroom }}</p>
             {% endfor %}
+            <br>
             <div>
                 <div id="confirm" style="margin-top:10px;">
                     <a href="/control"><button id="reset">Poskusi šeenkrat</button></a>
