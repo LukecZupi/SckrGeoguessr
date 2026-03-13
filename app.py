@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from qrcodegen import createQR
 import json
 import os
+import random
 
 if os.path.exists("static/images/qr.png"):
   os.remove("static/images/qr.png")
@@ -42,6 +43,18 @@ def finish():
         guessedClassrooms=guessedClassrooms, 
         correctClassroom=correctClassroom)
 
+@app.route("/randClassroom")
+def classroom():
+    classrooms = ["246","275","284","278","262","knjižnica","263","fablab","274","269","264","266","268","253","240","242","244","245","259","267","282","241","289","261"]
+    randomClassroom = random.choice(classrooms)
+    print(type(randomClassroom))
+    return randomClassroom #returns string
+
+@app.route("/getVar")
+def variable():
+    classrm = request.args('value')
+    print("GOT VARIABLE", classrm)
+    return classrm
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

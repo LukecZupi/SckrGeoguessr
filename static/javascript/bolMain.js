@@ -1,3 +1,41 @@
+document.addEventListener("DOMContentLoaded", () => {
+    $.ajax({
+        url: "/randClassroom",
+        data: {
+        },
+        success: function (result) {
+            console.log(result);
+            const img = document.getElementById("classroomImage");
+
+            //if (img) img.src = "../static/images" + correctClassroom + ".png";
+            if (img) img.src = "../static/images/267.png";
+        }
+    });
+});
+
+
+var pass_to_python = result;
+$.ajax(
+    {
+        type: 'POST',
+        dataType: 'text',
+        url: '/getVar?value=' + pass_to_python,
+        success: function (result) {
+            var reply = result.reply;
+            if (reply == "success") {
+                console.log("success for passing var")
+                return;
+            }
+            else {
+                alert("some error ocured in session agent")
+            }
+
+        }
+    }
+);
+
+
+/*
 let correctClassroom;
 
 export function getCorrectClassroom() {
@@ -21,3 +59,4 @@ document.addEventListener("DOMContentLoaded", () => {
     //if (img) img.src = "../static/images" + correctClassroom + ".png";
     if (img) img.src = "../static/images/267.png";
 });
+*/

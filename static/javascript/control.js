@@ -1,5 +1,14 @@
-import { getCorrectClassroom } from "./bolMain.js";
+$.ajax({
+    url: "/getVar",
+    data: {
+    },
+    success: function (result) {
+        console.log(result);
+        correctClassroom = result
+    }
+});
 
+console.log("correct clasroom: ", correctClassroom);
 // uses control.html. (SVG click logic and finish redirect)
 document.addEventListener("DOMContentLoaded", () => {
     const maxAttemps = 5;
@@ -20,8 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("clicked classroom", clicked);
 
         guessedClassrooms.push(clicked);
-
-        const correctClassroom = getCorrectClassroom();
 
         if (clicked === correctClassroom) {
 
