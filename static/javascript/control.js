@@ -1,16 +1,22 @@
+let correctClassroom = null;
+
 $.ajax({
-    url: "/getVar",
-    data: {
-    },
+    url: "/get-classroom",
     success: function (result) {
-        console.log(result);
-        correctClassroom = result
+
+        console.log("server returned:", result);
+
+        correctClassroom = result;
+
+        console.log("correct classroom:", correctClassroom);
+
+        startGame();
     }
 });
 
-console.log("correct clasroom: ", correctClassroom);
-// uses control.html. (SVG click logic and finish redirect)
-document.addEventListener("DOMContentLoaded", () => {
+
+function startGame() {
+    console.log("GAME STARTED")
     const maxAttemps = 5;
     let guessCount = 0;
     let gameOver = false;
@@ -60,9 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 window.location.href = `/finish?${params.toString()}`;
             }, 250);
-
         }
 
     });
-
-});
+}
